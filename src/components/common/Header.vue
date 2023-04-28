@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         
-        <div class="logo">辩证堂 | 中医全科数字化系统</div>
+        <div class="logo">中医药问询系统</div>
         <div class="header-right">
             <div class="header-user-con">                             
                 <!-- 用户头像 -->

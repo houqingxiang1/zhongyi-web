@@ -106,6 +106,7 @@ export default {
             })
             if(checked.length < 5) {
                 this.$message.error('选择的症候太少了，请进一步完善选项！');
+                return
             }
             let username = localStorage.getItem('ms_username');
             const {data} = await startIdentification({list: checked, user: username})            
