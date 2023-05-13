@@ -146,7 +146,7 @@ export default {
 <style>
 .wrap{
     display: flex;
-    padding-top: 120px; 
+    padding-top: 200px; 
     justify-content: center;   
 }
 .indet-box-card {
