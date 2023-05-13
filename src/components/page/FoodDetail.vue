@@ -42,7 +42,7 @@ export default {
 <style scoped>
 
 .box-card {
-    width: 480px;
+    width: 680px;
     border: none;
     
 }

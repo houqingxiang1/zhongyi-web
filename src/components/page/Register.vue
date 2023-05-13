@@ -58,10 +58,14 @@ export default {
         submitForm() {
             this.$refs.login.validate(async valid => {
                 if (valid) {
+                    if(this.param.password !== this.param.passwordConfirm){
+                        this.$message.error('密码必须一致');
+                        return
+                    }
                     const userinfo = await register({
                         name:this.param.username,
                         username: this.param.username,
-                        password: this.param.username
+                        password: this.param.password
                     })
                     this.$message.success('注册成功');
                     localStorage.removeItem('ms_username')
