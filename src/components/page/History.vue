@@ -1,5 +1,5 @@
 <template>
-    <div class="wrap">        
+    <div class="indet-wrap">        
        
         <el-card class="box-card" shadow="always" style="margin-top: 24px">
             <div slot="header">
@@ -58,17 +58,7 @@ export default {
 </script>
 
 <style>
-.wrap {
-    position: relative;
-    width: 100%;
-    
-    
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 120px;
-    overflow: scroll;
-}
+
 .box-card {
     width: 480px;
     border: none;

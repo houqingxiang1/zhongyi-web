@@ -1,6 +1,7 @@
 <template>
     <div class="fix" @click="back">
-        <i class="el-icon-back"></i>
+        <el-button circle style=""><i class="el-icon-back"></i></el-button>
+        
     </div>
 </template>
 <script>
@@ -22,8 +23,8 @@ export default {
     .fix{
         font-size: 44px;
         position: fixed;
-        top: 120px;
-        left: 220px;
+        top: 130px;
+        left: 24px;
         color: #fff;
         cursor: pointer;
         z-index: 1000;

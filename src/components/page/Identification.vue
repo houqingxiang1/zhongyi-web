@@ -1,13 +1,13 @@
 <template>
-    <div class="indet-wrap">        
-        <el-card class="indet-box-card" shadow="always">
+    <div>
+        <div class="wrap">        
+        <el-card class="indet-box-card indet-box-card-left" shadow="always">
             <div slot="header">
-                <span>开始辩证</span>
-                <span style="float: right; padding: 3px 0; cursor: pointer;" type="text">卡片 {{ total }} <i class="el-icon-arrow-right"></i> </span>
+                <span>开始辩证</span>                
             </div>
             <div class="indet-text">
                 <i class="el-icon-star-on"></i>
-                <span>
+                <span style="font-size: 14px;">
                     “开始辨证”后，请根据实际情况，认真勾选卡片中的症候及程度，如果没有则无需选择，左右滑动可向前或返回，也可以点击“跳过”切换下一卡片。人工智能双引擎系统将根据你的选择给出全面的治疗与调理方案。
                 </span>
             </div>
@@ -16,13 +16,13 @@
             </div>
             
         </el-card>
-        <el-card class="indet-box-card" shadow="always" style="margin-top: 24px">
+        <template>
+            <el-card class="indet-box-card" shadow="always" style="margin-left: 24px;">
             <div slot="header">
                 <span>辩证记录</span>                
-            </div> 
-            
-            <div v-if="!history.length" style="text-align: center;">暂无数据</div>           
-            <div>
+            </div>             
+            <div v-if="!history.length" style="text-align: center;">暂无记录</div>           
+            <div class="history-wrap">
                 <div v-for="(o) in history" :key="o.id" style="display:flex;padding: 12px">
                    <div style="flex: 1; cursor: pointer;" @click="() => goDetail(o.id)">
                         <p>{{o.data.calculated.title }}</p>
@@ -32,26 +32,32 @@
                 </div>
             </div>
         </el-card>
-        <el-drawer
-            title="症候列表"
-            :visible.sync="drawer">
-            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding-bottom:24px">
-                <div v-for="(o, index) in list" :key="o.id" style="width: 100%">
-                    <questionItem 
-                        :questionOptions="o.options" 
-                        :title="o.title" 
-                        :clickHandle="(value) => clickHandle(value, index)"
-                        :value="o.checked"
-                        :showRate="o.level"
-                        :descptions="o.description"
-                        :change="(value) => rateChange(value, index)"
-                        >
-                    </questionItem>
-                </div>
-                <el-button style="width: 100px" @click="startTo" type="primary" >提交辨识</el-button>
-            </div>
-        </el-drawer>
+        </template>       
+        
 
+    </div>
+    <el-dialog
+        title="症候列表"
+        :visible.sync="drawer">
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding-bottom:24px; ">
+            <div v-for="(o, index) in list" :key="o.id" style="width: 100%">
+                <questionItem 
+                    :questionOptions="o.options" 
+                    :title="o.title" 
+                    :clickHandle="(value) => clickHandle(value, index)"
+                    :value="o.checked"
+                    :showRate="o.level"
+                    :descptions="o.description"
+                    :change="(value) => rateChange(value, index)"
+                    >
+                </questionItem>
+            </div>
+           
+        </div>
+        <div slot="footer">
+             <el-button style="width: 100px" @click="startTo" type="primary" >提交辨识</el-button>
+        </div>
+    </el-dialog>
     </div>
 </template>
 
@@ -138,19 +144,14 @@ export default {
 </script>
 
 <style>
-.indet-wrap {
-    position: relative;
-    width: 100%;  
+.wrap{
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 120px;
-    overflow: scroll;
+    padding-top: 120px; 
+    justify-content: center;   
 }
 .indet-box-card {
     width: 480px;
-    border: none;
-    
+    border: none;    
 }
 .indet-box-card .el-card__header{
     background-color: #00c792 !important;
@@ -158,6 +159,11 @@ export default {
 }
 .indet-box-card .el-card__body{
     padding: 20px 0;
+}
+.indet-box-card-left .el-card__body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .indet-text{
     font-size: 12px;
@@ -169,6 +175,17 @@ export default {
 }
 .checked{
     color: #00c792;
+}
+.history-wrap{
+    max-height: 190px;
+    overflow-y: auto;
+}
+.el-dialog__body{
+    max-height: 400px;
+    overflow: scroll;
+}
+.el-dialog__header{
+    /* background-color:#00c792;  */
 }
 
 

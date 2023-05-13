@@ -1,5 +1,5 @@
 <template>
-    <div class="indet-detail-wrap">  
+    <div class="indet-wrap">  
         <el-card class="indet-detail-box-card" shadow="always" style="margin-top: 24px">
             <div slot="header">
                 <span>症候</span>                
@@ -137,17 +137,7 @@ export default {
 </script>
 
 <style>
-.indet-detail-wrap {
-    position: relative;
-    width: 100%;    
-    
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 120px;
-    padding-bottom: 120px;
-    overflow: scroll;
-}
+
 .indet-detail-box-card {
     width: 480px;
     border: none;
