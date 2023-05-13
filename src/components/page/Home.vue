@@ -5,7 +5,7 @@
                 placement="bottom"                
                 width="400"
                 trigger="click">
-                <el-input size="medium"  style="width: 400px;" v-model="keyword" slot="reference" />
+                <el-input size="medium"  style="width: 700px;" v-model="keyword" slot="reference" />
                 <div class="search-result">
                     <p v-if="!options.length">暂无数据</p>
                     <div v-for="(o, index) in options" :key="index">
@@ -189,7 +189,7 @@ export default {
     
 }
 .left{
-    width: 266px;
+    width: 366px;
     height: 252px;
     border-radius: 4px;
     box-shadow: 0 6px 12px 0 hsl(215deg 9% 63% / 20%);
@@ -201,7 +201,7 @@ export default {
     background-color: #fff;
     display: block;
     cursor: pointer;
-    background-position: 60px 35px;
+    background-position: 120px 35px;
 }
 .left-sub{
     font-size: 12px;
