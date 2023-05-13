@@ -30,7 +30,7 @@
                     <div class="item-info">
                         中药饮片
                     </div>
-                    <i class="el-icon-s-data"></i>
+                    <i class="el-icon-pear"></i>
                 </div>
                 <div class="right-item" @click="()=> go('/food')">
                     <div class="item-info">
