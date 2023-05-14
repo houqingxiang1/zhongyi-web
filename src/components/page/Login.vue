@@ -51,7 +51,7 @@ export default {
                     try{
                         const response = await login({
                         username: this.param.username,
-                        password: this.param.username
+                        password: this.param.password
                     })
                         this.$message.success('登录成功');
                         localStorage.setItem('ms_username', response.data.username);
