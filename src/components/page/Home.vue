@@ -23,7 +23,7 @@
                 <p class="left-sub">九种常见体质的辨识及中医调养方法</p>
             </div>
             <div class="right">
-                <p class="title">自学中医</p>
+                <p class="title">健康养生</p>
                 <!-- <p class="right-sub">临证参考，传统方剂，经络循环，穴位</p> -->
                 <div class="right-wrap">
                     <div class="right-item" @click="()=> go('/zhongyaoyinpian')">
